@@ -38,12 +38,14 @@ unsigned long long put_byte(unsigned long long x, unsigned char b, int i){
     // x = 00010010 00110100 01010110 01111000 11001101 11101111 00110100 01010110
     // b = 10101011 - AB - 1011
     // y = 00000000 00000000 00000000 00000000 00000000 00000000 00000000 10101011
-    size_t offset = (sizeof (x) - (1 + i));
-    // if machine is big endian calculate from back to front.
+
+    size_t offset = i;
+    // if machine is little endian calculate from back to front.
     if (!is_big_endian()){
-        offset = sizeof (x) - offset;
+        offset = (sizeof (x) -(i+1));
     }
-    // otherwise calculate regulary.
+
+    // jump to correct byte and replace it.
     unsigned char *jump = (unsigned char*) &(x);
     jump += offset;
     *jump = b;
