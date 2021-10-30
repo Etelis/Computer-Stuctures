@@ -21,7 +21,7 @@ int is_big_endian(){
  * @param long x - the second half number.
  * @param long int y - the first half number.
  */
-unsigned long long merge_bytes(unsigned long long x, unsigned long long y){
+unsigned long merge_bytes(unsigned long x, unsigned long y){
     // maskY = 00000000 00000000 00000000 00000000 11111111 11111111 11111111 11111111
     // maskX = 11111111 11111111 11111111 11111111 00000000 00000000 00000000 00000000
     unsigned long long maskY = 0x00000000FFFFFFFF, maskX = 0xFFFFFFFF00000000;
@@ -34,7 +34,7 @@ unsigned long long merge_bytes(unsigned long long x, unsigned long long y){
  * @param b - the byte we will replace.
  * @param i - the offset.
  */
-unsigned long long put_byte(unsigned long long x, unsigned char b, int i){
+unsigned long put_byte(unsigned long x, unsigned char b, int i){
     // x = 00010010 00110100 01010110 01111000 11001101 11101111 00110100 01010110
     // b = 10101011 - AB - 1011
     // y = 00000000 00000000 00000000 00000000 00000000 00000000 00000000 10101011

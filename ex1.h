@@ -2,7 +2,7 @@
 #define EX1_H_
 
 int is_big_endian();
-unsigned long long merge_bytes(unsigned long long x, unsigned long long y);
-unsigned long long put_byte(unsigned long long x, unsigned char b, int i);
+unsigned long merge_bytes(unsigned long x, unsigned long y);
+unsigned long put_byte(unsigned long x, unsigned char b, int i);
 
 #endif
